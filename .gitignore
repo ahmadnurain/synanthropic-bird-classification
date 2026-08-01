@@ -1,0 +1,53 @@
+# Dataset (terlalu besar untuk GitHub — download dari Google Drive)
+dataset/
+dataset_*/
+Datasets/
+*.zip
+*.tar.gz
+
+# Model files (file .keras disertakan langsung di repo karena < 100 MB)
+# *.keras  ← TIDAK di-ignore, model disertakan di folder models/
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.pkl
+*.onnx
+*.tflite
+
+# Audio files
+*.mp3
+*.wav
+*.ogg
+*.flac
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Temporary
+*.tmp
+*.bak
+*.log
+
+# Node (jika ada)
+node_modules/

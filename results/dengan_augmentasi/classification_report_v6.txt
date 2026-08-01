@@ -1,0 +1,16 @@
+Model: EfficientNet-B3 + GRU V6 (Log-Mel Spectrogram)
+Ekstraksi: Log-Mel + Delta + Delta-Delta
+Akurasi: 81.15%
+Loss: 0.1070
+
+                        precision    recall  f1-score   support
+
+      Geopelia striata       0.79      0.79      0.79       105
+       Passer montanus       0.87      0.92      0.90        98
+ Pycnonotus aurigaster       0.80      0.74      0.77       107
+   Pycnonotus goiavier       0.78      0.79      0.78       101
+Streptopelia chinensis       0.82      0.83      0.82        93
+
+              accuracy                           0.81       504
+             macro avg       0.81      0.81      0.81       504
+          weighted avg       0.81      0.81      0.81       504
