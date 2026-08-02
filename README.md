@@ -71,6 +71,9 @@ avesident/
 │   └── Training_Baseline_TanpaAugmentasi berhasil di pakai.ipynb
 │
 ├── metadata/                          ← Data metadata penelitian
+│   ├── curated_source_metadata.csv    ← 3.635 entri metadata XC + status + lisensi tiap rekaman
+│   ├── selected_recordings_manifest.csv ← Manifest 628 rekaman terpilih + lisensi CC per rekaman
+│   ├── class_mapping.csv              ← Pemetaan class_id → nama spesies
 │   ├── metadata_raw_xeno_canto.csv    ← Metadata mentah 3.635 rekaman Xeno-canto
 │   ├── metadata_final_dataset.csv     ← Metadata akhir + status penelitian (digunakan/tidak)
 │   ├── audio_qc_report.csv            ← Laporan QC audio per file
@@ -184,6 +187,37 @@ Lihat `models/README.md` untuk detail arsitektur dan cara penggunaan.
 - Kumar, V. et al. (2024). *Improving learning-based birdsong classification by utilizing combined audio augmentation strategies.* Ecological Informatics.
 - Park, D. S. et al. (2019). *SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition.*
 
-## Lisensi
+## Lisensi dan Penggunaan Data
 
-Repositori ini dibuat untuk keperluan akademis (Tugas Akhir/Skripsi). Data audio bersumber dari [Xeno-canto](https://xeno-canto.org/) yang didistribusikan di bawah lisensi Creative Commons.
+Repositori ini dibuat untuk keperluan **akademis non-komersial** (Tugas Akhir/Skripsi).
+
+### Kode dan Model
+
+Kode program, skrip preprocessing, dan model `.keras` dalam repositori ini bebas digunakan untuk keperluan penelitian dan pendidikan non-komersial dengan mencantumkan atribusi.
+
+### Sumber Data Audio
+
+Seluruh rekaman audio bersumber dari repositori publik [Xeno-canto](https://xeno-canto.org/) dengan lisensi Creative Commons per rekaman. Distribusi lisensi dari 628 rekaman yang digunakan:
+
+| Lisensi | Jumlah | Keterangan |
+|---------|-------:|------------|
+| [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | 431 | Boleh dibagikan dengan atribusi, non-komersial, ShareAlike |
+| [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) | 129 | Non-komersial; **turunan tidak boleh dibagikan** |
+| [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) | 30 | Boleh dibagikan dengan atribusi, non-komersial, ShareAlike |
+| [CC BY-NC-ND 2.5](https://creativecommons.org/licenses/by-nc-nd/2.5/) | 25 | Non-komersial; **turunan tidak boleh dibagikan** |
+| [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | 7 | Boleh dibagikan termasuk komersial, dengan atribusi + ShareAlike |
+| [CC BY-NC-ND 3.0](https://creativecommons.org/licenses/by-nc-nd/3.0/) | 6 | Non-komersial; **turunan tidak boleh dibagikan** |
+
+Lisensi lengkap per rekaman tersedia di [`metadata/selected_recordings_manifest.csv`](metadata/selected_recordings_manifest.csv) pada kolom `license_type`.
+
+> **Catatan reproduksi:** Untuk 160 rekaman berlisensi CC BY-NC-ND, segmen audio turunan dan spectrogram tidak dapat didistribusikan ulang secara publik. Reproduksi dataset dapat dilakukan dengan mengunduh rekaman sumber langsung dari Xeno-canto menggunakan XC ID yang tercantum dalam manifest, kemudian menjalankan skrip preprocessing yang tersedia di repositori ini.
+
+### Penggunaan Model
+
+| Penggunaan | Status |
+|-----------|:------:|
+| Penelitian dan skripsi | ✅ Boleh |
+| Pengembangan lanjutan non-komersial | ✅ Boleh |
+| Portofolio dan demo pendidikan | ✅ Boleh |
+| Aplikasi berbayar / berlangganan / beriklan | ⚠️ Latih ulang dari data berlisensi komersial |
+| Dijual sebagai produk | ⚠️ Latih ulang dari data berlisensi komersial |
